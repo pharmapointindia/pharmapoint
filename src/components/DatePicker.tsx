@@ -15,11 +15,11 @@ export function Calendar24() {
   const [open, setOpen] = React.useState(false)
   const [date, setDate] = React.useState<Date | undefined>(undefined)
   return (
-    <div className="p-3 space-y-3">
-        <div className="flex flex-col gap-2">
+    <div className="p-3 space-y-3 ">
+        <div className="flex flex-col gap-1">
           
-      <div className="flex flex-col gap-3">
-        <Label htmlFor="date-picker" className="pr-1">
+      <div className="flex flex-col gap-1 font-medium font-['Inter'] leading-4">
+        <Label htmlFor="date-picker" >
           Select Date
         </Label>
         <Popover open={open} onOpenChange={setOpen}>
@@ -27,10 +27,10 @@ export function Calendar24() {
             <Button
               variant="outline"
               id="date-picker"
-              className="w-90 justify-between font-normal"
+              className="w-[340px] h-[40px] justify-between font-normal"
             >
-              <div className="flex items-center gap-2">
-              <CalendarIcon className="h-4 w-4 text-gray-500" />
+              <div className="flex items-center gap-2 text-gray-500">
+              <CalendarIcon className="h-4 w-4 " />
               <span>{date ? date.toLocaleDateString() : "DD/MM/YY"}</span>
               </div>
             

@@ -1,5 +1,5 @@
 import React from "react";
-import pharmapointlogotext from "../assets/pharmapoint_logo_text.png"; 
+import pharmapointlogotext from "../assets/pharmapoint_logo_text.png";
 
 type HeadersProps = {
     logoSrc?: string;

@@ -1,9 +1,10 @@
 import React from "react"
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { ChevronDownIcon } from "lucide-react"
 
@@ -13,6 +14,7 @@ type DropdownProps = {
   value?: string
   onChange?: (value: string) => void
   width?: string 
+  height?: string
 }
 
 const CommonDropdown: React.FC<DropdownProps> = ({
@@ -20,7 +22,9 @@ const CommonDropdown: React.FC<DropdownProps> = ({
   options,
   value,
   onChange,
-  width = "w-90",
+  width = "w-[340px]",
+  height = "h-[40px]",
+
 }) => {
   const [open, setOpen] = React.useState(false)
   const [selected, setSelected] = React.useState<string>(value || "")
@@ -32,34 +36,30 @@ const CommonDropdown: React.FC<DropdownProps> = ({
   }
 
   return (
-    <div className="flex flex-col gap-1">
-      {label && <label className="text-left block text-sm font-medium">{label}</label>}
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
+    <div className="flex flex-col gap-1 font-medium font-['Inter'] leading-4">
+      {label && <label className="text-left block text-sm ">{label}</label>}
+      <DropdownMenu open={open} onOpenChange={setOpen}>
+        <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className={`${width} justify-between font-normal`}
+            className={`${width} ${height} justify-between font-inter`}
           >
-            {selected || "Select option"}
+            {selected || "Select Location"}
             <ChevronDownIcon className="ml-2 h-4 w-4" />
-          </Button> 
-        </PopoverTrigger>
-        <PopoverContent className={`${width} p-0`} align="start">
-          <div className="flex flex-col divide-y">
-            {options.map((option) => (
-              <button
-                key={option}
-                onClick={() => handleSelect(option)}
-                className={`text-left px-3 py-2 hover:bg-gray-100 ${
-                  selected === option ? "bg-gray-50 font-medium" : ""
-                }`}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-        </PopoverContent>
-      </Popover>
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className={`${width}`} align="start">
+          {options.map((option) => (
+            <DropdownMenuItem
+              key={option}
+              onClick={() => handleSelect(option)}
+              className={`${selected === option ? "bg-grey" : ""} cursor-pointer`}
+            >
+              {option}
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   )
 }
