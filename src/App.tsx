@@ -15,7 +15,7 @@ const [fetchedData, setFetchedData] = React.useState<
 >(undefined);
   return (
     <>
-    <div className='text-core-gray-800 text-base font-medium font-["Inter_Variable"] leading-6'>
+    <div className=' text-core-gray-800 text-base font-medium font-["Inter_Variable"] leading-6'>
       <Headers />
       <Dashboard  />
 
@@ -35,6 +35,7 @@ const [fetchedData, setFetchedData] = React.useState<
         ) : completed ? (
           <ReportSection
             data={fetchedData}
+
           />
         ) : null}
       </div>

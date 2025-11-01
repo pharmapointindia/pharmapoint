@@ -8,10 +8,7 @@ interface TemperatureChartProps {
     ambientTemp: number;
   }>;
 }
-
-export function TemperatureChartSection({ data }: TemperatureChartProps) {
-
-   const sampleData = [
+const sampleData = [
     { time: "10:00", loggerTemp: 4.5, ambientTemp: 25.1 },
     { time: "11:00", loggerTemp: 5.0, ambientTemp: 26.3 },
     { time: "12:00", loggerTemp: 6.2, ambientTemp: 28.0 },
@@ -23,13 +20,16 @@ export function TemperatureChartSection({ data }: TemperatureChartProps) {
     { time: "18:00", loggerTemp: 4.3, ambientTemp: 27.8 },
   ];
 
-  
+
+export function TemperatureChartSection({ data }: TemperatureChartProps) {
+
+
   const chartData = data && data.length > 0 ? data : sampleData;
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Temperature Monitoring</CardTitle>
+      <CardHeader className="text-left">
+        <CardTitle >Temperature Monitoring</CardTitle>
         <CardDescription>Logger temperature vs. ambient temperature over time</CardDescription>
       </CardHeader>
       <CardContent>
