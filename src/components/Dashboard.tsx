@@ -1,7 +1,6 @@
 import React from "react";
 import CommonDropdown from "../components/CommonDropdown";
-import {DatePicker} from "../components/DatePicker";
-<<<<<<< HEAD
+import {DatePicker} from "./DatePicker";
 import { Button } from "@/components/ui/button"
 import LoadingState from "./LoadingState"
 import ReportSection from "./ReportSection"
@@ -20,16 +19,6 @@ const [fetchedData, setFetchedData] = React.useState<
   return (
     <>
       <div className="flex gap-4 items-end">
-=======
-
-const Dashboard: React.FC = () => {
-  const [selectedItem, setSelectedItem] = React.useState<string>("");
-
-  return (
-    <>
-      
-      <div className="flex gap-4">
->>>>>>> 8e7b042f66a07c126dec7830e336c5ced468bf78
         {/* Dropdown for selecting From location */}
         <div className="p-3 space-y-3">
           <CommonDropdown
@@ -50,7 +39,6 @@ const Dashboard: React.FC = () => {
           />
         </div>
 
-<<<<<<< HEAD
         {/* Date Picker */}
         <DatePicker />
 
@@ -91,9 +79,6 @@ const Dashboard: React.FC = () => {
             data={fetchedData}
           />
         ) : null}
-=======
-        <DatePicker />
->>>>>>> 8e7b042f66a07c126dec7830e336c5ced468bf78
       </div>
     </>
   );
