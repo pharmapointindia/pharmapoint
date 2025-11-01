@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import './App.css'
 import Headers from "./components/Headers";
@@ -36,28 +35,11 @@ const [fetchedData, setFetchedData] = React.useState<
         ) : completed ? (
           <ReportSection
             data={fetchedData}
-            onRetry={() => {
-              setLoading(true);
-              setCompleted(false);
-            }}
           />
         ) : null}
       </div>
       
     </div>
-=======
-import './App.css'
-import Headers from "./components/Headers";
-import Dashboard from './components/Dashboard'
-
-
-function App() {
-
-  return (
-    <>
-    <Headers />
-    <div className=' '><Dashboard  /></div>
->>>>>>> 8e7b042f66a07c126dec7830e336c5ced468bf78
 
     </>
   )
