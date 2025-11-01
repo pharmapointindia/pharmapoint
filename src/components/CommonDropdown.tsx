@@ -48,7 +48,7 @@ const CommonDropdown: React.FC<DropdownProps> = ({
             <ChevronDownIcon className="ml-2 h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className={`${width}`} align="start">
+        <DropdownMenuContent className={`${width} bg-white`} align="start">
           {options.map((option) => (
             <DropdownMenuItem
               key={option}

@@ -37,7 +37,7 @@ export function Calendar24() {
               <ChevronDownIcon />
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-auto overflow-hidden p-0" align="end">
+          <PopoverContent className="w-auto overflow-hidden p-0 bg-white " align="end">
             <Calendar
               mode="single"
               selected={date}
