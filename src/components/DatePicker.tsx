@@ -11,7 +11,11 @@ import {
 import { CalendarIcon } from "lucide-react"
 
 
-export function Calendar24() {
+interface Calendar24Props {
+  label?: string; 
+}
+
+export function Calendar24({ label = "Select Date" }: Calendar24Props) {
   const [open, setOpen] = React.useState(false)
   const [date, setDate] = React.useState<Date | undefined>(undefined)
   return (
@@ -20,7 +24,7 @@ export function Calendar24() {
           
       <div className="flex flex-col gap-1 font-medium font-['Inter'] leading-4">
         <Label htmlFor="date-picker" >
-          Select Date
+          {label}
         </Label>
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
@@ -57,6 +61,6 @@ export function Calendar24() {
 }
 
 
-export function DatePicker() {
-  return <Calendar24 />
+export function DatePicker({ label }: Calendar24Props) {
+  return <Calendar24 label={label}  />;
 }

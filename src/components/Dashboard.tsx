@@ -20,27 +20,21 @@ const [fetchedData, setFetchedData] = React.useState<
     <>
       <div className="flex gap-4 items-end">
         {/* Dropdown for selecting From location */}
-        <div className="p-3 space-y-3">
+        <div className="p-3 space-y-3 font-medium font-['Inter'] leading-4">
           <CommonDropdown
-            label="From"
-            options={["Mumbai", "Delhi", "Bangalore", "Chennai"]}
+            label="Location"
+            options={["Mumbai", "New Delhi", "Ahmedabad","Bangalore", "Chennai" ,"Cochin", "Chandigarh","Calicut","Varanasi", "Bhubaneswar","Kolkata","Indore","Jaipur","Hyderabad","Pune","Vizag",]}
             value={selectedItem}
             onChange={setSelectedItem}
           />
         </div>
 
-        {/* Dropdown for selecting To location */}
-        <div className="p-3 space-y-3">
-          <CommonDropdown
-            label="To"
-            options={["Mumbai", "Delhi", "Bangalore", "Chennai"]}
-            value={selectedItem}
-            onChange={setSelectedItem}
-          />
-        </div>
+    
+         {/* From Date Picker */}
+        <DatePicker label="From Date" />
 
-        {/* Date Picker */}
-        <DatePicker />
+        {/* To Date Picker */}
+        <DatePicker label="To Date" />
 
         {/* Check Button - aligned with Date Picker */}
         <div className="p-3 space-y-3 justify-start text-alias-content-inverted text-sm font-medium font-['Inter'] leading-4">
@@ -56,9 +50,8 @@ const [fetchedData, setFetchedData] = React.useState<
         </div>
 
 
-         
-  
 
+  
       </div>
 
       {/* Loading state */}

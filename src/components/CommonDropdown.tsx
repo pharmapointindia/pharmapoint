@@ -17,7 +17,7 @@ type DropdownProps = {
   height?: string
 }
 
-const CommonDropdown: React.FC<DropdownProps> = ({
+const   CommonDropdown: React.FC<DropdownProps> = ({
   label = "Select",
   options,
   value,
@@ -42,7 +42,7 @@ const CommonDropdown: React.FC<DropdownProps> = ({
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className={`${width} ${height} justify-between font-inter`}
+            className={`${width} ${height} justify-between font-inter text-gray-500`}
           >
             {selected || "Select Location"}
             <ChevronDownIcon className="ml-2 h-4 w-4" />
