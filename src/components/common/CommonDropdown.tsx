@@ -22,7 +22,7 @@ const   CommonDropdown: React.FC<DropdownProps> = ({
   options,
   value,
   onChange,
-  width = "w-[340px]",
+  width = "w-[320px]",
   height = "h-[40px]",
 
 }) => {

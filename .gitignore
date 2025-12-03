@@ -23,5 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
+# BACKEND
 backend/*
 src/api/*
+.venv
+
+
+# FRONTEND
+.env
